@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -15,21 +14,6 @@
 
     <build>
 
-=======
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>fr.irit.bastide</groupId>
-	<artifactId>FFSSM_Enonce</artifactId>
-	<version>1.0</version>
-	<packaging>jar</packaging>
-   <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>8</java.version>
-    </properties>    
-        
-    <build>
-        
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -40,29 +24,17 @@
                 </configuration>
             </plugin>
 
-<<<<<<< HEAD
-
-=======
-           
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
+
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
-<<<<<<< HEAD
 
-=======
-                       
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -93,15 +65,11 @@
                 <version>3.0.0-M1</version>
                 <configuration>
                 </configuration>
-<<<<<<< HEAD
+
             </plugin>
         </plugins>
     </build>
-=======
-            </plugin>            
-        </plugins>
-    </build>    
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
+
 
     <dependencies>
         <dependency>
@@ -117,9 +85,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 9e56bcc6a937df67b8aeae7ee2af50c185152ae6
 </project>
