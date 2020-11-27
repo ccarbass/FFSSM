@@ -17,6 +17,8 @@ public class Licence {
 
     public Club club;
 
+    public boolean valide;
+
     public Licence(Personne possesseur, String numero, LocalDate delivrance, int niveau, Club club) {
         this.possesseur = possesseur;
         this.numero = numero;
@@ -45,6 +47,8 @@ public class Licence {
         return club;
     }
 
+
+
     /**
      * Est-ce que la licence est valide à la date indiquée ?
      * Une licence est valide pendant un an à compter de sa date de délivrance
@@ -61,4 +65,7 @@ public class Licence {
          }
     }
 
+    public void setValid(boolean b) {
+        valide=b;
+    }
 }
