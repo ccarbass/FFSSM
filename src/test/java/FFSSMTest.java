@@ -119,9 +119,12 @@ public class FFSSMTest {
         M1.nouvelleEmbauche(C1, LocalDate.now());
         assertTrue(!M1.emplois().isEmpty());
     }
-
-    //Test class Plongee
     //Test class Plongeur
 
+    @Test
+    public void VerificationAjoutLicence(){
+        assertFalse(P1.licences.isEmpty());
+
+    }
 
 }
