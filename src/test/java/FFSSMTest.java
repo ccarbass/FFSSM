@@ -88,13 +88,6 @@ public class FFSSMTest {
         //Vérification que l'emploi est bien fini
         assertTrue(M1.emplois().get(M1.emplois().size() - 1).estTerminee());
     }
-    @Test
-    public void estTerminer(){
-         assertTrue(M1.emplois().isEmpty());
-        M1.nouvelleEmbauche(C1, LocalDate.now());
-        assertTrue(!M1.emplois().isEmpty());
-    }
-
 
     @Test
     public void VerificationEmployeur(){
@@ -119,6 +112,14 @@ public class FFSSMTest {
          M2.nouvelleEmbauche(C2,D5);
         assertEquals(C2, M2.employeurActuel().get(), "Pas le même employeur");
     }
+
+    @Test
+    public void VerificationAjoutEmploi(){
+        assertTrue(M1.emplois().isEmpty());
+        M1.nouvelleEmbauche(C1, LocalDate.now());
+        assertTrue(!M1.emplois().isEmpty());
+    }
+
     //Test class Plongee
     //Test class Plongeur
 
