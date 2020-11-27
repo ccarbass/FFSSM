@@ -93,6 +93,10 @@ public class Club {
         this.telephone = telephone;
     }
 
+    public ArrayList<Plongee> getPlongees() {
+        return plongees;
+    }
+
     @Override
     public String toString() {
         return "Club{" + "président: " + president + ", nom: " + nom + ", adresse: " + adresse + ", telephone: " + telephone + '}';

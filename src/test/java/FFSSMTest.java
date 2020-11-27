@@ -1,10 +1,12 @@
 import FFSSM.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 
 public class FFSSMTest {
-    Plongeur P1;
+    Plongeur P1,P2;
     Moniteur M1,M2;
     Club C1,C2;
     Embauche E1,E2;
@@ -16,21 +18,27 @@ public class FFSSMTest {
 
      @BeforeEach
     public void setUp(){
-         D1= LocalDate.of(1999,04,12);
-         D2= LocalDate.of(1968,03,10);
-         D3= LocalDate.of(2020,06,02);
+         D1= LocalDate.of(1999,4,12);
+         D2= LocalDate.of(1968,3,10);
+         D3= LocalDate.of(2020,6,2);
          D4= LocalDate.of(1989,8,20);
-         D5= LocalDate.of(2019,8,20);
+         D5= LocalDate.of(2019,5,20);
 
          P1 = new Plongeur("123","dupont","jean","Rue du surf","0987654332",D1,4,GroupeSanguin.APLUS);
+         P1.ajouteLicence("1",D5,C1);
+
+         P2 = new Plongeur("123","dupont","Marie","Rue du surf","0987643332",D2,4,GroupeSanguin.APLUS);
+         P2.ajouteLicence("1",D3,C1);
 
          M1 = new Moniteur("12","tructruc","francine","Rue du paddle","0997654332",D2,6,GroupeSanguin.BPLUS,2390);
+         M1.ajouteLicence("2",D3,C1);
          M2 = new Moniteur("143","xu","win","Rue du skate","0909654332",D4,6,GroupeSanguin.BMOINS,24);
+         M2.ajouteLicence("3",D3,C2);
 
          C1 = new Club(M1,"PEPOUZE","059688734");
          C2 = new Club(M2,"PEPOUZE","059688734");
 
-         L1= new Licence(P1,"1",D3,4,C1);
+         L1= new Licence(P1,"1",D5,4,C1);
          L2= new Licence(M1,"2",D3,6,C1);
          L3= new Licence(M2,"3",D3,6,C2);
 
@@ -44,6 +52,34 @@ public class FFSSMTest {
          S2 = new Site("Gouffre du paradis","Très profonde avec une eau magnifique et des fonds superbes");
 
      }
+
+    //Test class Club
+    @Test
+    public void PlongeeNonConforme(){
+         //ajout de participants
+         PL1.ajouteParticipant(P1);
+         PL2.ajouteParticipant(P2);
+         //Attribution au club
+         C1.organisePlongee(PL1);
+         C1.organisePlongee(PL2);
+
+         assertTrue(C1.plongeesNonConformes().contains(PL1) && !C1.plongeesNonConformes().contains(PL2));
+    }
+
+    @Test
+    public void VerficiationAjoutPlongee(){
+        //ajout de participants
+        PL1.ajouteParticipant(P1);
+        //Attribution au club
+        C1.organisePlongee(PL1);
+        assertTrue(C1.getPlongees().contains(PL1));
+
+    }
+    //Test class Embauche
+    //Test class Licence
+    //Test class Moniteur
+    //Test class Plongee
+    //Test class Plongeur
 
 
 }

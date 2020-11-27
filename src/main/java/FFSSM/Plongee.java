@@ -48,8 +48,8 @@ public class Plongee {
 	 */
 	public boolean estConforme() {
 		boolean conforme=true;
-		for (Plongeur p : participants) {
-			if (!p.licences.get(p.licences.size()-1).estValide(this.getDate())) {
+		for (Plongeur plongeurs : participants) {
+			if (!plongeurs.licences.get(plongeurs.licences.size()-1).estValide(this.getDate())) {
 				conforme = false;
 			}
 		}
