@@ -42,23 +42,7 @@ public class Embauche {
         return employeur;
     }
 
-    /**
-     * Get the value of employe
-     *
-     * @return the value of employe
-     */
-    public Moniteur getEmploye() {
-        return employe;
-    }
 
-    /**
-     * Get the value of fin
-     *
-     * @return the value of fin
-     */
-    public LocalDate getFin() {
-        return fin;
-    }
 
     /**
      * Set the value of fin
@@ -69,14 +53,7 @@ public class Embauche {
         this.fin = fin;
     }
 
-    /**
-     * Get the value of debut
-     *
-     * @return the value of debut
-     */
-    public LocalDate getDebut() {
-        return debut;
-    }
+
 
     
 }

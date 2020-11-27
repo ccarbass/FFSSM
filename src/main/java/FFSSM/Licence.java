@@ -27,29 +27,7 @@ public class Licence {
         this.club = club;
     }
 
-    public Personne getPossesseur() {
-        return possesseur;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public LocalDate getDelivrance() {
-        return delivrance;
-    }
-
-    public int getNiveau() {
-        return niveau;
-    }
-
-    public Club getClub() {
-        return club;
-    }
-
-
-
-    /**
+     /**
      * Est-ce que la licence est valide à la date indiquée ?
      * Une licence est valide pendant un an à compter de sa date de délivrance
      * @param d la date à tester
