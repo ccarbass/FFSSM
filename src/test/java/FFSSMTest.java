@@ -2,8 +2,11 @@ import FFSSM.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class FFSSMTest {
     Plongeur P1,P2;
@@ -76,8 +79,46 @@ public class FFSSMTest {
 
     }
     //Test class Embauche
+
+    @Test
+    public void verificationFin(){
+         M1.nouvelleEmbauche(C1,D5);
+            M1.emplois().get(M1.emplois().size() - 1).terminer(LocalDate.now());
+
+        //Vérification que l'emploi est bien fini
+        assertTrue(M1.emplois().get(M1.emplois().size() - 1).estTerminee());
+    }
+    @Test
+    public void estTerminer(){
+         assertTrue(M1.emplois().isEmpty());
+        M1.nouvelleEmbauche(C1, LocalDate.now());
+        assertTrue(!M1.emplois().isEmpty());
+    }
+
+
+    @Test
+    public void VerificationEmployeur(){
+        M1.nouvelleEmbauche(C1,D5);
+        //Supposition d'un employeur
+        Optional<Club> employeur = Optional.of(M1.emplois().get(M1.emplois().size() - 1).getEmployeur());
+
+        //Les deux employeurs sont égaux
+        assertEquals(Optional.ofNullable(M1.emplois().get(M1.emplois().size() - 1).getEmployeur()), employeur);
+    }
+
+
     //Test class Licence
+    @Test
+    public void VerificationValideLicence(){
+        assertTrue(P1.licences.get(0).estValide(D5.plusMonths(11)));
+        assertFalse(P1.licences.get(0).estValide(D5.plusMonths(12)));
+    }
     //Test class Moniteur
+    @Test
+    public void VerificationEmployeurActuel() throws Exception {
+         M2.nouvelleEmbauche(C2,D5);
+        assertEquals(C2, M2.employeurActuel().get(), "Pas le même employeur");
+    }
     //Test class Plongee
     //Test class Plongeur
 
