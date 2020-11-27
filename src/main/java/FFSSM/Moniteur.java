@@ -25,7 +25,9 @@ public class Moniteur extends Plongeur  {
      */
     public Optional<Club> employeurActuel() throws Exception{
         if(jobs.isEmpty())
-            throw new Exception("Aucun emploi");
+            throw new Exception("Sans emploi");
+        if(emplois().get(jobs.size()-1).estTerminee())
+            throw new Exception("Emploi terminée");
         return Optional.ofNullable(jobs.get(jobs.size()-1).getEmployeur());
 
     }
